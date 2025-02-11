@@ -18,6 +18,12 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
+  useEffect(() => {
+    if (localStorage.getItem("jwt")) {
+      redirect("/dashboard");
+    }
+  }, []);
+
   async function handleLogin(e) {
     e.preventDefault();
     if (email === "" || password === "") {
