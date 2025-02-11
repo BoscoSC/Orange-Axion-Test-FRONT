@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { LoginBox, ButtonContainer } from "../styles/LoginStyles";
+import InputField from "./InputField";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -21,27 +22,25 @@ export default function LoginForm() {
 
       <div>
         <p style={{ fontWeight: 600 }}>Email</p>
-        <input
+        <InputField
           type="email"
           placeholder="seunome@email.com"
+          src="/assets/mail.png"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          icon="/assets/mail.png"
         />
-      </div>
 
-      <div>
         <p style={{ fontWeight: 600 }}>Password</p>
         <input
-          type="email"
-          placeholder="seunome@email.com"
-          icon="/assets/mail.png"
+          type="password"
+          placeholder="Password"
+          src="/assets/lock.png"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
 
-      <div style={{ fontWeight: 600 }}>Problemas para acessar sua conta?</div>
+      <p style={{ fontWeight: 600 }}>Problemas para acessar sua conta?</p>
 
       <ButtonContainer>
         <button onClick={handleLogin}>Acessar</button>

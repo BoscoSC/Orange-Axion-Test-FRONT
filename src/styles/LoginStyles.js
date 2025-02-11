@@ -52,3 +52,13 @@ export const ButtonContainer = styled.div`
     gap: 20px;
   }
 `;
+
+export const InputContainerSvg = styled.div`
+  position: relative;
+  img {
+    position: absolute;
+    top: 25%;
+    right: 10px;
+    width: 15px;
+  }
+`;
