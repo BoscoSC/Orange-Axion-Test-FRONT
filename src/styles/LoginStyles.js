@@ -30,7 +30,7 @@ export const LoginBox = styled.form`
 
   input {
     width: 100%;
-    padding: 0.5rem 0.75rem;
+    padding: 0.75rem 0.75rem;
     border: 1px solid #4a4a4a;
     margin-bottom: 0.6rem;
   }
@@ -46,10 +46,9 @@ export const InputContainerSvg = styled.div`
   }
 `;
 
-export const CheckboxShowPasswordContainer = styled.div`
+export const CheckboxShowPasswordContainer = styled.span`
   width: fit-content;
   display: flex;
-  justify-content: start;
   align-items: center;
   height: 22px;
   gap: 0.3rem;
