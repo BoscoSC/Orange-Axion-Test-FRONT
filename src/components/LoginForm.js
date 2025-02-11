@@ -8,6 +8,7 @@ import {
   ButtonContainer,
   ButtonPrimary,
   ButtonSecondary,
+  Terms,
 } from "../styles/LoginStyles.js";
 import InputField from "./InputField.js";
 import login from "@/services/auth.js";
@@ -67,11 +68,13 @@ export default function LoginForm() {
             checked={showPassword}
             onChange={() => setShowPassword(!showPassword)}
           />
-          <p>Mostrar a senha</p>
+          <p style={{ fontSize: 14 }}>Mostrar a senha</p>
         </CheckboxShowPasswordContainer>
       </div>
 
-      <p style={{ fontWeight: 600 }}>Problemas para acessar sua conta?</p>
+      <p style={{ fontWeight: 600, fontSize: 14 }}>
+        Problemas para acessar sua conta?
+      </p>
 
       <ButtonContainer>
         <ButtonPrimary type="submit">Acessar</ButtonPrimary>
@@ -83,6 +86,7 @@ export default function LoginForm() {
         <ButtonSecondary type="button" onClick={() => router.push("/register")}>
           Cadastrar
         </ButtonSecondary>
+        <Terms>Termos de uso • Política de privacidade</Terms>
       </ButtonContainer>
     </LoginBox>
   );

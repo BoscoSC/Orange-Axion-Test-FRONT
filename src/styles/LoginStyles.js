@@ -83,6 +83,7 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-size: 16px;
 
   hr {
     width: 100%;
@@ -99,6 +100,8 @@ export const ButtonContainer = styled.div`
 `;
 
 export const ButtonPrimary = styled.button`
+  font-size: 16px;
+
   cursor: pointer;
   width: 100%;
   background-image: linear-gradient(to right, #ae23a9, #dc4e1b);
@@ -110,9 +113,15 @@ export const ButtonPrimary = styled.button`
 `;
 
 export const ButtonSecondary = styled.button`
+  font-size: 16px;
+
   padding: 0.8rem;
   width: 100%;
   background-color: transparent;
   border: 1px solid #9b9b9b;
   color: #4a4a4a;
+`;
+
+export const Terms = styled.p`
+  font-size: 14px;
 `;
