@@ -1,9 +1,9 @@
 "use client";
 import { ButtonCategory, NavbarContainer } from "@/styles/DashboardStyles";
-import { useState } from "react";
+import { useCategory } from "@/context/CategoryContext.js";
 
 export default function Navbar() {
-  const [category, setCategory] = useState("foods");
+  const { category, setCategory } = useCategory();
 
   return (
     <NavbarContainer>

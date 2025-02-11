@@ -36,3 +36,13 @@ export const ButtonCategory = styled.button`
   font-weight: ${({ $active }) => ($active ? "700" : "300")};
   cursor: pointer;
 `;
+
+export const Main = styled.main`
+  margin-top: 100px;
+  padding: 40px 17%;
+`;
+
+export const CategoryTitle = styled.h2`
+  font-size: 18px;
+  font-weight: 600;
+`;

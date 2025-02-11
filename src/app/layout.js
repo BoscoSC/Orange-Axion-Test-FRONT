@@ -1,5 +1,6 @@
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import { CategoryProvider } from "@/context/CategoryContext";
 
 const openSans = Open_Sans({
   weight: ["300", "600", "700"],
@@ -15,7 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body className={`${openSans.variable}`}>{children}</body>
+      <CategoryProvider>
+        <body className={`${openSans.variable}`}>{children}</body>
+      </CategoryProvider>
     </html>
   );
 }
