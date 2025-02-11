@@ -80,7 +80,7 @@ export default function LoginForm() {
           ou
           <hr />
         </span>
-        <ButtonSecondary onClick={() => router.push("/register")}>
+        <ButtonSecondary type="button" onClick={() => router.push("/register")}>
           Cadastrar
         </ButtonSecondary>
       </ButtonContainer>

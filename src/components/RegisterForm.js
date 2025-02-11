@@ -107,7 +107,7 @@ export default function RegisterForm() {
           ou
           <hr />
         </span>
-        <ButtonSecondary onClick={() => router.push("/")}>
+        <ButtonSecondary type="button" onClick={() => router.push("/")}>
           Acessar
         </ButtonSecondary>
       </ButtonContainer>
