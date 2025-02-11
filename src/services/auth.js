@@ -10,3 +10,13 @@ export default async function login(body) {
     throw error;
   }
 }
+
+export async function register(body) {
+  try {
+    console.log(body);
+    const response = await axios.post(`${BASE_URL}/auth/local/register`, body);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
