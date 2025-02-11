@@ -10,6 +10,7 @@ import {
   ButtonSecondary,
 } from "../styles/LoginStyles.js";
 import InputField from "./InputField.js";
+import login from "@/services/auth.js";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -17,14 +18,23 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
-  async function handleLogin() {
+  async function handleLogin(e) {
+    e.preventDefault();
     if (email === "" || password === "") {
       alert("Preencha os campos antes de continuar!");
+    } else {
+      try {
+        const res = await login({ identifier: email, password });
+        localStorage.setItem("jwt", res.data.jwt);
+        router.push("/dashboard");
+      } catch (error) {
+        alert("Erro ao fazer login");
+      }
     }
   }
 
   return (
-    <LoginBox>
+    <LoginBox onSubmit={handleLogin}>
       <Image src="/assets/logo.png" alt="" width={230} height={30} priority />
 
       <div>
@@ -58,7 +68,7 @@ export default function LoginForm() {
       <p style={{ fontWeight: 600 }}>Problemas para acessar sua conta?</p>
 
       <ButtonContainer>
-        <ButtonPrimary onClick={handleLogin}>Acessar</ButtonPrimary>
+        <ButtonPrimary type="submit">Acessar</ButtonPrimary>
         <span>
           <hr />
           ou
