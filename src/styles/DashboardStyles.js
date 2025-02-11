@@ -33,4 +33,6 @@ export const ButtonCategory = styled.button`
   padding: 1.5rem 1rem;
   color: #4a4a4a;
   font-size: 18px;
+  font-weight: ${({ $active }) => ($active ? "700" : "300")};
+  cursor: pointer;
 `;
