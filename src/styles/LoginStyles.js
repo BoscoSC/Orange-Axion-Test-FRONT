@@ -6,6 +6,7 @@ export const Container = styled.div`
   align-items: center;
   padding-left: 10%;
   height: 100vh;
+
   background-image: url("/assets/bg.jpg");
   background-size: 900px;
   background-position: right;
@@ -19,9 +20,9 @@ export const LoginBox = styled.form`
   width: 100%;
   max-width: 400px;
   gap: 40px;
+
   background-color: #ffffff;
   box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
 
   div {
     gap: 10px;
@@ -30,26 +31,8 @@ export const LoginBox = styled.form`
   input {
     width: 100%;
     padding: 0.5rem 0.75rem;
+    border: 1px solid #4a4a4a;
     margin-bottom: 0.6rem;
-  }
-`;
-
-export const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-
-  hr {
-    width: 100%;
-    border: 1px solid #909090;
-  }
-
-  span {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
   }
 `;
 
@@ -95,4 +78,42 @@ export const CheckboxShowPasswordContainer = styled.div`
       background-color: #4a4a4a;
     }
   }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  hr {
+    width: 100%;
+    border: 1px solid #909090;
+  }
+
+  span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+`;
+
+export const ButtonPrimary = styled.button`
+  cursor: pointer;
+  width: 100%;
+  background-image: linear-gradient(to right, #ae23a9, #dc4e1b);
+  padding: 0.8rem;
+  border: none;
+
+  color: #ffffff;
+  font-weight: 600;
+`;
+
+export const ButtonSecondary = styled.button`
+  padding: 0.8rem;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #9b9b9b;
+  color: #4a4a4a;
 `;

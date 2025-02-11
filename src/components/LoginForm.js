@@ -4,8 +4,10 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import {
   LoginBox,
-  ButtonContainer,
   CheckboxShowPasswordContainer,
+  ButtonContainer,
+  ButtonPrimary,
+  ButtonSecondary,
 } from "../styles/LoginStyles.js";
 import InputField from "./InputField.js";
 
@@ -23,7 +25,7 @@ export default function LoginForm() {
 
   return (
     <LoginBox>
-      <Image src="/assets/logo.png" alt="" width={230} height={40} priority />
+      <Image src="/assets/logo.png" alt="" width={230} height={30} priority />
 
       <div>
         <p style={{ fontWeight: 600 }}>Email</p>
@@ -47,7 +49,7 @@ export default function LoginForm() {
           <input
             type="checkbox"
             checked={showPassword}
-            onChange={() => setShowPassword(!showPassword)} // Alterna o estado
+            onChange={() => setShowPassword(!showPassword)}
           />
           <p>Mostrar a senha</p>
         </CheckboxShowPasswordContainer>
@@ -56,13 +58,15 @@ export default function LoginForm() {
       <p style={{ fontWeight: 600 }}>Problemas para acessar sua conta?</p>
 
       <ButtonContainer>
-        <button onClick={handleLogin}>Acessar</button>
+        <ButtonPrimary onClick={handleLogin}>Acessar</ButtonPrimary>
         <span>
           <hr />
           ou
           <hr />
         </span>
-        <button onClick={() => router.push("/register")}>Cadastrar</button>
+        <ButtonSecondary onClick={() => router.push("/register")}>
+          Cadastrar
+        </ButtonSecondary>
       </ButtonContainer>
     </LoginBox>
   );
