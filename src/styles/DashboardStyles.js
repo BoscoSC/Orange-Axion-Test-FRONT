@@ -66,9 +66,7 @@ export const ListContainer = styled.div`
 `;
 
 export const CategoryItem = styled.div`
-  color: #ffffff;
-  font-size: 28px;
-  font-weight: 600;
+  height: 300px;
   box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
 
   position: relative;
