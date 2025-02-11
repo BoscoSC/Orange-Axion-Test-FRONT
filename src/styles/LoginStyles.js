@@ -62,3 +62,37 @@ export const InputContainerSvg = styled.div`
     width: 15px;
   }
 `;
+
+export const CheckboxShowPasswordContainer = styled.div`
+  width: fit-content;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 22px;
+  gap: 0.3rem;
+
+  color: #4a4a4a;
+
+  input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    user-select: none;
+    cursor: pointer;
+    padding: 0;
+    width: 10px;
+    height: 10px;
+    margin: 0;
+    border: 1px solid black;
+    border-radius: 0;
+    position: relative;
+
+    &:checked::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #4a4a4a;
+    }
+  }
+`;

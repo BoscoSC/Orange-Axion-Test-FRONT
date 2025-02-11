@@ -2,12 +2,17 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { LoginBox, ButtonContainer } from "../styles/LoginStyles";
-import InputField from "./InputField";
+import {
+  LoginBox,
+  ButtonContainer,
+  CheckboxShowPasswordContainer,
+} from "../styles/LoginStyles.js";
+import InputField from "./InputField.js";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
   async function handleLogin() {
@@ -31,13 +36,21 @@ export default function LoginForm() {
         />
 
         <p style={{ fontWeight: 600 }}>Password</p>
-        <input
-          type="password"
+        <InputField
+          type={showPassword ? "text" : "password"}
           placeholder="Password"
           src="/assets/lock.png"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <CheckboxShowPasswordContainer>
+          <input
+            type="checkbox"
+            checked={showPassword}
+            onChange={() => setShowPassword(!showPassword)} // Alterna o estado
+          />
+          <p>Mostrar a senha</p>
+        </CheckboxShowPasswordContainer>
       </div>
 
       <p style={{ fontWeight: 600 }}>Problemas para acessar sua conta?</p>
