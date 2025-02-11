@@ -17,4 +17,20 @@ export const HeaderContainer = styled.header`
   background-color: #ffffff;
   box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
   z-index: 10;
+
+  div {
+    cursor: pointer;
+  }
+`;
+
+export const NavbarContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+`;
+
+export const ButtonCategory = styled.button`
+  padding: 1.5rem 1rem;
+  color: #4a4a4a;
+  font-size: 18px;
 `;
