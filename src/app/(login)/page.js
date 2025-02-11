@@ -1,6 +1,11 @@
 "use client";
-import { Container } from "@/styles/LoginStyles";
+import { Container } from "@/styles/LoginStyles.js";
+import LoginForm from "@/components/LoginForm.js";
 
 export default function Home() {
-  return <Container></Container>;
+  return (
+    <Container>
+      <LoginForm />
+    </Container>
+  );
 }
