@@ -40,6 +40,16 @@ export const ButtonCategory = styled.button`
 export const Main = styled.main`
   margin-top: 100px;
   padding: 40px 17%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  hr {
+    background: linear-gradient(to right, #ae23a9, #dc4e1b);
+    height: 5px;
+    border: 0;
+  }
 `;
 
 export const CategoryTitle = styled.h2`
