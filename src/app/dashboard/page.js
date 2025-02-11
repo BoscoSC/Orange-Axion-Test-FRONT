@@ -4,7 +4,8 @@ import {
   Main,
   CategoryTitle,
 } from "@/styles/DashboardStyles";
-import Header from "@/components/dashboard/Header";
+import Header from "@/components/dashboard/Header.js";
+import CategoryList from "@/components/dashboard/CategoryList.js";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
 import { useCategory } from "@/context/CategoryContext.js";
@@ -13,7 +14,9 @@ export default function Dashboard() {
   const { category } = useCategory();
 
   useEffect(() => {
-    if (!localStorage.getItem("jwt")) {
+    const jwt = localStorage.getItem("jwt");
+
+    if (!jwt) {
       redirect("/");
     }
   }, []);
@@ -24,6 +27,7 @@ export default function Dashboard() {
       <Main>
         <CategoryTitle>{"LIST OF " + category.toUpperCase()}</CategoryTitle>
         <hr />
+        <CategoryList />
       </Main>
     </DashboardContainer>
   );

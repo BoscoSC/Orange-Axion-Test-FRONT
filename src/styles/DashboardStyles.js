@@ -56,3 +56,30 @@ export const CategoryTitle = styled.h2`
   font-size: 18px;
   font-weight: 600;
 `;
+
+export const ListContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  gap: 40px;
+`;
+
+export const CategoryItem = styled.div`
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+  box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
+
+  position: relative;
+`;
+
+export const ItemName = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: white;
+
+  font-size: 28px;
+  font-weight: 700;
+`;

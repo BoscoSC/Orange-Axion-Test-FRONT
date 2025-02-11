@@ -5,7 +5,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
 export default async function login(body) {
   try {
     const response = await axios.post(`${BASE_URL}/auth/local`, body);
-    return response;
+    return response.data;
   } catch (error) {
     throw error;
   }
@@ -13,9 +13,8 @@ export default async function login(body) {
 
 export async function register(body) {
   try {
-    console.log(body);
     const response = await axios.post(`${BASE_URL}/auth/local/register`, body);
-    return response;
+    return response.data;
   } catch (error) {
     throw error;
   }
