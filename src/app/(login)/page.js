@@ -1,3 +1,6 @@
+"use client";
+import { Container } from "@/styles/LoginStyles";
+
 export default function Home() {
-  return <div>Hello World</div>;
+  return <Container></Container>;
 }
