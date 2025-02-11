@@ -37,7 +37,6 @@ export default function RegisterForm() {
       alert("Preencha os campos antes de continuar!");
     } else if (password === confirmPassword) {
       try {
-        console.log({ username: name, email, password });
         await register({ username: name, email, password });
         router.push("/");
       } catch (error) {
