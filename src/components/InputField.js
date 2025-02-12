@@ -8,10 +8,12 @@ export default function InputField({
   value,
   onChange,
   src,
+  id,
 }) {
   return (
     <InputContainerSvg>
       <input
+        id={id}
         type={type}
         placeholder={placeholder}
         value={value}

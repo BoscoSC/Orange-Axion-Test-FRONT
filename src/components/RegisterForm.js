@@ -8,6 +8,13 @@ import {
   ButtonContainer,
   ButtonPrimary,
   ButtonSecondary,
+  FormContainer,
+  FormContent,
+  InputContainer,
+  LabelInput,
+  LabelCheckbox,
+  Terms,
+  ProblemsText,
 } from "../styles/LoginStyles.js";
 import InputField from "./InputField.js";
 import { register } from "@/services/auth.js";
@@ -51,53 +58,69 @@ export default function RegisterForm() {
     <LoginBox onSubmit={handleRegister}>
       <Image src="/assets/logo.png" alt="" width={230} height={30} priority />
 
-      <div>
-        <p style={{ fontWeight: 600 }}>Name</p>
-        <InputField
-          type="text"
-          placeholder="Name"
-          src="/assets/mail.png"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+      <FormContainer>
+        <FormContent>
+          <InputContainer>
+            <LabelInput htmlFor="name">Name</LabelInput>
+            <InputField
+              id="name"
+              type="text"
+              placeholder="Name"
+              src="/assets/mail.png"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </InputContainer>
 
-        <p style={{ fontWeight: 600 }}>Email</p>
-        <InputField
-          type="email"
-          placeholder="seunome@email.com"
-          src="/assets/mail.png"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <InputContainer>
+            <LabelInput htmlFor="email">Email</LabelInput>
+            <InputField
+              id="email"
+              type="email"
+              placeholder="seunome@email.com"
+              src="/assets/mail.png"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </InputContainer>
 
-        <p style={{ fontWeight: 600 }}>Password</p>
-        <InputField
-          type={showPassword ? "text" : "password"}
-          placeholder="Password"
-          src="/assets/lock.png"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <InputContainer>
+            <LabelInput htmlFor="password">Password</LabelInput>
+            <InputField
+              id="password"
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              src="/assets/lock.png"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </InputContainer>
 
-        <p style={{ fontWeight: 600 }}>Confirm Password</p>
-        <InputField
-          type={showPassword ? "text" : "password"}
-          placeholder="Confirm Password"
-          src="/assets/lock.png"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+          <InputContainer>
+            <LabelInput htmlFor="confirmPassword">Confirm Password</LabelInput>
+            <InputField
+              id="confirmPassword"
+              type={showPassword ? "text" : "password"}
+              placeholder="Confirm Password"
+              src="/assets/lock.png"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </InputContainer>
+        </FormContent>
+
         <CheckboxShowPasswordContainer>
           <input
+            id="checkbox"
             type="checkbox"
             checked={showPassword}
             onChange={() => setShowPassword(!showPassword)}
           />
-          <p>Mostrar as senhas</p>
+          <LabelCheckbox htmlFor="checkbox">Mostrar as senhas</LabelCheckbox>
         </CheckboxShowPasswordContainer>
-      </div>
+      </FormContainer>
 
-      <p style={{ fontWeight: 600 }}>Problemas para acessar sua conta?</p>
+      <ProblemsText>Problemas para acessar sua conta?</ProblemsText>
 
       <ButtonContainer>
         <ButtonPrimary type="submit">Cadastrar</ButtonPrimary>
@@ -110,6 +133,8 @@ export default function RegisterForm() {
           Acessar
         </ButtonSecondary>
       </ButtonContainer>
+
+      <Terms>Termos de uso • Política de privacidade</Terms>
     </LoginBox>
   );
 }

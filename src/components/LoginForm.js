@@ -9,6 +9,12 @@ import {
   ButtonPrimary,
   ButtonSecondary,
   Terms,
+  LabelInput,
+  LabelCheckbox,
+  InputContainer,
+  FormContainer,
+  FormContent,
+  ProblemsText,
 } from "../styles/LoginStyles.js";
 import InputField from "./InputField.js";
 import login from "@/services/auth.js";
@@ -44,37 +50,45 @@ export default function LoginForm() {
     <LoginBox onSubmit={handleLogin}>
       <Image src="/assets/logo.png" alt="" width={230} height={30} priority />
 
-      <div>
-        <p style={{ fontWeight: 600 }}>Email</p>
-        <InputField
-          type="email"
-          placeholder="seunome@email.com"
-          src="/assets/mail.png"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+      <FormContainer>
+        <FormContent>
+          <InputContainer>
+            <LabelInput htmlFor="email">Email</LabelInput>
+            <InputField
+              id="email"
+              type="email"
+              placeholder="seunome@email.com"
+              src="/assets/mail.png"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </InputContainer>
 
-        <p style={{ fontWeight: 600 }}>Password</p>
-        <InputField
-          type={showPassword ? "text" : "password"}
-          placeholder="Password"
-          src="/assets/lock.png"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <InputContainer>
+            <LabelInput htmlFor="password">Password</LabelInput>
+            <InputField
+              id="password"
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              src="/assets/lock.png"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </InputContainer>
+        </FormContent>
+
         <CheckboxShowPasswordContainer>
           <input
+            id="checkbox"
             type="checkbox"
             checked={showPassword}
             onChange={() => setShowPassword(!showPassword)}
           />
-          <p style={{ fontSize: 14 }}>Mostrar a senha</p>
+          <LabelCheckbox htmlFor="checkbox">Mostrar a senha</LabelCheckbox>
         </CheckboxShowPasswordContainer>
-      </div>
+      </FormContainer>
 
-      <p style={{ fontWeight: 600, fontSize: 14 }}>
-        Problemas para acessar sua conta?
-      </p>
+      <ProblemsText>Problemas para acessar sua conta?</ProblemsText>
 
       <ButtonContainer>
         <ButtonPrimary type="submit">Acessar</ButtonPrimary>

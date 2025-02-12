@@ -21,32 +21,59 @@ export const LoginBox = styled.form`
   max-width: 400px;
   gap: 40px;
 
+  height: auto;
+  max-height: 95vh;
+  overflow-y: auto;
+
   background-color: #ffffff;
   box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
+`;
 
-  div {
-    gap: 10px;
-  }
+export const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
 
-  input {
-    width: 100%;
-    padding: 0.75rem 0.75rem;
-    border: 1px solid #4a4a4a;
-    margin-bottom: 0.6rem;
-  }
+export const FormContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const LabelInput = styled.label`
+  font-weight: 600;
+`;
+
+export const LabelCheckbox = styled.label`
+  font-size: 14px;
+  cursor: pointer;
 `;
 
 export const InputContainerSvg = styled.div`
   position: relative;
+
+  input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+    border: 1px solid #4a4a4a;
+  }
+
   img {
     position: absolute;
-    top: 25%;
     right: 10px;
-    width: 15px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 `;
 
-export const CheckboxShowPasswordContainer = styled.span`
+export const CheckboxShowPasswordContainer = styled.div`
   width: fit-content;
   display: flex;
   align-items: center;
@@ -92,6 +119,7 @@ export const ButtonContainer = styled.div`
 
   span {
     width: 100%;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,4 +152,9 @@ export const ButtonSecondary = styled.button`
 
 export const Terms = styled.p`
   font-size: 14px;
+`;
+
+export const ProblemsText = styled.p`
+  font-size: 14px;
+  font-weight: 600;
 `;
