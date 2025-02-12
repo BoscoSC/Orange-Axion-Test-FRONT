@@ -78,6 +78,21 @@ export const ListContainer = styled.div`
   flex-wrap: wrap;
   margin-top: 40px;
   gap: 40px;
+
+  position: relative;
+`;
+
+export const ImageOverlay = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  z-index: 1;
+
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+
+  width: 300px;
+  height: 150px;
 `;
 
 export const CategoryItem = styled.div`
@@ -95,4 +110,6 @@ export const ItemName = styled.div`
 
   font-size: 28px;
   font-weight: 700;
+
+  z-index: 2;
 `;

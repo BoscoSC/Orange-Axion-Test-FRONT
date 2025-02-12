@@ -4,6 +4,7 @@ import {
   ListContainer,
   CategoryItem,
   ItemName,
+  ImageOverlay,
 } from "@/styles/DashboardStyles.js";
 import Image from "next/image";
 import getCategoryList from "@/services/categories";
@@ -24,6 +25,7 @@ export default function CategoryList() {
     <ListContainer>
       {items.map((item) => (
         <CategoryItem key={item.id}>
+          <ImageOverlay />
           <Image
             src={`http://localhost:1337${item.link[0].url}`}
             alt={item.name}
