@@ -32,7 +32,7 @@ export default function LoginForm() {
     } else {
       try {
         const res = await login({ identifier: email, password });
-        localStorage.setItem("jwt", res.data.jwt);
+        localStorage.setItem("jwt", res.jwt);
         router.push("/dashboard");
       } catch (error) {
         alert("Erro ao fazer login");
