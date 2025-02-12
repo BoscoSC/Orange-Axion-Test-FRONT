@@ -10,6 +10,8 @@ import Image from "next/image";
 import getCategoryList from "@/services/categories";
 import { useCategory } from "@/context/CategoryContext.js";
 
+const BASE_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
+
 export default function CategoryList() {
   const [items, setItems] = useState([]);
   const { category, sort } = useCategory();
@@ -27,7 +29,7 @@ export default function CategoryList() {
         <CategoryItem key={item.id}>
           <ImageOverlay />
           <Image
-            src={`http://localhost:1337${item.link[0].url}`}
+            src={`${BASE_URL}${item.link[0].url}`}
             alt={item.name}
             width={300}
             height={300}
