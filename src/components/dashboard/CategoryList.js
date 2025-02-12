@@ -22,8 +22,8 @@ export default function CategoryList() {
 
   return (
     <ListContainer>
-      {items.map((item, index) => (
-        <CategoryItem key={index}>
+      {items.map((item) => (
+        <CategoryItem key={item.id}>
           <Image
             src={`http://localhost:1337${item.link[0].url}`}
             alt={item.name}
