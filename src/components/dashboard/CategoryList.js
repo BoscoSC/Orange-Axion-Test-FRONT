@@ -11,14 +11,14 @@ import { useCategory } from "@/context/CategoryContext.js";
 
 export default function CategoryList() {
   const [items, setItems] = useState([]);
-  const { category } = useCategory();
+  const { category, sort } = useCategory();
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
-    getCategoryList(category, jwt).then((res) => {
+    getCategoryList(category, jwt, sort).then((res) => {
       setItems(res);
     });
-  }, [category]);
+  }, [category, sort]);
 
   return (
     <ListContainer>

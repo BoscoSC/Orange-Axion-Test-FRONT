@@ -52,6 +52,21 @@ export const Main = styled.main`
   }
 `;
 
+export const TitleContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  button {
+    cursor: pointer;
+    padding: 0 10px;
+  }
+
+  svg {
+    font-size: 20px;
+  }
+`;
+
 export const CategoryTitle = styled.h2`
   font-size: 18px;
   font-weight: 600;

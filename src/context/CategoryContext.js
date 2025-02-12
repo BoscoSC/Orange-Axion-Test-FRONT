@@ -9,9 +9,10 @@ export const useCategory = () => {
 
 export const CategoryProvider = ({ children }) => {
   const [category, setCategory] = useState("foods");
+  const [sort, setSort] = useState(undefined);
 
   return (
-    <CategoryContext.Provider value={{ category, setCategory }}>
+    <CategoryContext.Provider value={{ category, setCategory, sort, setSort }}>
       {children}
     </CategoryContext.Provider>
   );
